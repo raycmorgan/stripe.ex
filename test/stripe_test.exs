@@ -9,4 +9,8 @@ defmodule StripeTest.Charge do
     charge = Stripe.Charge.retrieve!(id: "ch_1tEa2FtVyao2Yb")
     assert charge["id"] == "ch_1tEa2FtVyao2Yb"
   end
+
+  test "can fetch a set of cards" do
+    assert {:ok, {200, _, charges}} = Stripe.Charge.list
+  end
 end
