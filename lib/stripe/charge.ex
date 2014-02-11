@@ -1,5 +1,5 @@
 defmodule Stripe.Charge do
-  use Okapi.Resource
+  use Okapi.Resource, api_module: Stripe
 
   @prefix "/charges"
 

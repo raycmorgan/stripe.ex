@@ -1,7 +1,7 @@
 defmodule Stripe do
   use Okapi
 
-  config :api_key, "sk_test_BQokikJOvBiI2HlWgH4olfQ2"
+  config :api_key, "sk_XPymrxOPupS9EZasz3Aso04w4KAM4"
   config :base_url, "https://api.stripe.com/v1"
 
   def auth(request) do
