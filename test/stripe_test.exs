@@ -11,6 +11,27 @@ defmodule StripeTest.Charge do
   end
 
   test "can fetch a set of cards" do
-    assert {:ok, {200, _, charges}} = Stripe.Charge.list
+    assert {:ok, {200, _, _}} = Stripe.Charge.list
+  end
+
+  test "can create a charge" do
+    result = Stripe.Charge.create!(
+      amount: 1000,
+      currency: "usd",
+      "card[number]": "4242424242424242",
+      "card[exp_month]": 2,
+      "card[exp_year]": 2020
+    )
+
+    result = Stripe.Charge.create!(
+      amount: 1000,
+      currency: "usd",
+
+      card: [
+        number: "4242424242424242",
+        exp_month: 2,
+        exp_year: 2020
+      ]
+    )
   end
 end
